@@ -14,8 +14,12 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.sun} source={picSun}/>
-        <Image style={styles.guy} source={picCoolDude}/>
+        <View style={styles.container}>
+          <Image style={styles.sun} source={picSun}/>
+        </View>
+        <View style={styles.guyContainer}>
+          <Image style={styles.guy} source={picCoolDude}/>
+        </View>
       </View>
     )
   }
@@ -23,7 +27,12 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'row'
+  },
+  guyContainer: {
+    flex: 2,
+    flexDirection: 'column'
   },
   sun: {
     flex: 1,
