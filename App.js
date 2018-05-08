@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 import {
+  Dimensions,
+  Image,
   StyleSheet,
   StatusBar,
   Text,
   View
 } from 'react-native';
+import picCoolDude from './assets/coolDude.png';
+import picSun from './assets/sun.png';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar hidden={true} />
-        <Text style={[styles.defaultText,styles.coolText]}>Cool dude</Text>
-        <Text style={[styles.defaultText,styles.happyText]}>Happy dude</Text>
-        <Text style={[styles.defaultText,styles.sadText]}>Sad dude</Text>
-        <View style={styles.container}>
-        <Text style={[styles.defaultText, styles.image]}>[Insert Image]</Text>
-        </View>
+        <Image style={styles.sun} source={picSun}/>
+        <Image style={styles.guy} source={picCoolDude}/>
       </View>
     )
   }
@@ -24,36 +23,16 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  sun: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    justifyContent: 'space-around',
-    backgroundColor: 'blueviolet'
+    width: Dimensions.get('window').width,
+    resizeMode: 'contain'
   },
-  defaultText: {
-    textAlign: 'center',
-    fontSize: 20,
-    padding: 10,
-    margin: 5,
-    borderWidth: StyleSheet.hairlineWidth,
-    color: 'black'
-  },
-  happyText: {
-    alignSelf: 'flex-end',
-    backgroundColor: 'yellow',
-    color: 'black',
-    fontWeight: 'bold'
-  },
-  coolText: {
-    backgroundColor: 'cyan',
-    color: 'blue'
-  },
-  sadText: {
-    backgroundColor: 'black',
-    color: 'cyan'
-  },
-  image: {
-    flexDirection: 'row',
-    backgroundColor: 'white',
+  guy: {
+    flex: 2,
+    width: Dimensions.get('window').width,
+    resizeMode: 'cover'
   }
 })
