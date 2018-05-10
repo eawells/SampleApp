@@ -16,9 +16,6 @@ export default class App extends React.Component {
         <Text style={[styles.defaultText,styles.coolText]}>Cool dude</Text>
         <Text style={[styles.defaultText,styles.happyText]}>Happy dude</Text>
         <Text style={[styles.defaultText,styles.sadText]}>Sad dude</Text>
-        <View style={styles.container}>
-          <Image source={picCoolDude}/>
-        </View>
       </View>
     )
   }
